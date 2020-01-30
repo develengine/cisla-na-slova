@@ -1,6 +1,6 @@
 
 numbers1 = [
-    "jedna", "dva", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť", "desať",
+    "", "jedna", "dva", "tri", "štyri", "päť", "šesť", "sedem", "osem", "deväť", "desať",
     "jedenásť", "dvanásť", "trinásť", "štrnásť", "pätnásť", "šestnásť", "sedemnásť", "osemnásť", "devätnásť"
 ]
 
@@ -40,7 +40,7 @@ def decas(s, feminine = False):
         return numbers1[num - 1]
     else:
         ending = "dsať" if int(s[0]) < 5 else "desiat"
-        return numbers1[int(s[0]) - 1] + ending + numbers1[int(s[1]) - 1]
+        return numbers1[int(s[0])] + ending + numbers1[int(s[1])]
 
 
 def hundas(s, feminine = False):
@@ -56,6 +56,10 @@ def main():
         print("Number must be a valid integer!")
         number = input("Input number: ")
     
+    if number == "0":
+        print("nula")
+        return
+
     output = [ ]
     
     triplet_count, left_over = divmod(len(number), 3)
