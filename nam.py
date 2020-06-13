@@ -77,6 +77,8 @@ def main():
         if group == 2:
             tail = "tisíc"
         elif group != 1:
+            if num == "000":
+                continue
             n = int(num)
             ending_index = 0 if n == 1 else (1 if n < 5 else 2)
             g, r = divmod(group - 3, 2)
